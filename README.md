@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+#  登录页  项目文档
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 项目前端技术栈
+react   antd    axios   sass  
 
-## Available Scripts
+React   用于构建 Web 和原生交互界面的库
+antd    是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。
+axios   是一个基于 promise 的网络请求库，可以用于浏览器和 node.js
+sass    世界上最成熟、最稳定、最强大的专业级CSS扩展语言！
 
-In the project directory, you can run:
 
-### `npm start`
+## 创建项目开始过程  
+### 1.1 创建项目 并启动
+打开vscode，在桌面或者任意目录，在终端执行命令
+ 
+npx create-react-app   longin-react-antd  -y   
+(需安装了 create-react-app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+cd longin-react-antd 
+npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+cd longin-react-antd    // 或vscode打开项目目录
+npm start
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 删除public/和src/文件夹内多余的文件。保留如下
+    public/
+        favicon.ico
+        index.html
+    src/
+        App.js
+        index.css
+        index.js
 
-### `npm run build`
+### 1.2 安装依赖包
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm i react-router-dom axios  antd sass 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1.3  创建src目录结构
+    [文件夹]
+        api     接口
+        config  配置信息
+        utils   工具
+        views   组件
+    [文件]
+        app     根组件
+        index     入口js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+##  文件注释
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### api 接口
+    （后端需配置跨域，axios不要header参数。）
+    adminApi.js         导出 $login 用于发起登录axios
+    接口文档.md         接口描述
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### config  配置信息
+    index.js     导出 baseUrl 等配置信息
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### views 组件
 
-## Learn More
+    Login 组件      
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### utils   工具
+    request.js     导出axios实例 instance 提供给 api js使用
